@@ -7,25 +7,26 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             //selD()
-            document.getElementsByTagName('select')[1].onchange = selD;
+            document.getElementsByTagName('select')[1].onchange = selD; //Select 陣列[1] 觸發 selD
             document.getElementById('idD').onchange = show;
           
         });
         window.onload = function () {
+            //年
             for (var i = 2010; i <= 2020; i++) {            
                 var theY = document.createElement('option');
                 theY.setAttribute('value', i);
                 //var optY = document.createTextNode(i);
                 //theY.appendChild(optY)
-                theY.innerHTML = i; //取代兩個標籤內的文字內容
+                theY.innerHTML = i; //取代"兩個標籤"內的文字內容
                 document.getElementById('idY').appendChild(theY);
             }
        
-
+        //月
         for (var i = 1 ; i <= 12; i++) {
             var theM = document.createElement('option');
             theM.setAttribute('value', i);
-            theM.innerHTML = i;
+            theM.innerHTML = i;//取代兩個標籤內的文字內容
             document.getElementById('idM').appendChild(theM);
             console.log(theM);
         }
