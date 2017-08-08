@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            //selD()
+            document.getElementsByTagName('select')[1].onchange = selD;
+            document.getElementById('idD').onchange = show;
+          
+        });
+        window.onload = function () {
+            for (var i = 2010; i <= 2020; i++) {            
+                var theY = document.createElement('option');
+                theY.setAttribute('value', i);
+                //var optY = document.createTextNode(i);
+                //theY.appendChild(optY)
+                theY.innerHTML = i; //取代兩個標籤內的文字內容
+                document.getElementById('idY').appendChild(theY);
+            }
+       
+
+        for (var i = 1 ; i <= 12; i++) {
+            var theM = document.createElement('option');
+            theM.setAttribute('value', i);
+            theM.innerHTML = i;
+            document.getElementById('idM').appendChild(theM);
+            console.log(theM);
+        }
+}
+        function selD() {
+            
+            idY = document.getElementById('idY');
+            idM = document.getElementById('idM');
+            idD = document.getElementById('idD');
+            idD.innerHTML = "<option>--</option>";
+            var day = new Date(idY.value, idM.value, 0).getDate();
+            for (var i = 1 ; i <= day; i++) {
+                var theD = document.createElement('option');            
+                theD.setAttribute('value', i);
+                theD.innerHTML = i;
+                document.getElementById('idD').appendChild(theD);
+                console.log(theD)
+            }
+        }
+        function show() {
+            document.getElementById('txt').innerHTML = idY.value + '年' + idM.value + '月' + idD.value + '日';
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <select id="idY"><option>--</option></select>
+        <select id="idM"><option>--</option></select>
+        <select id="idD"><option>--</option></select>
+        <textarea id="txt"></textarea>
+    </div>
+</body>
+</html>
