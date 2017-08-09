@@ -15,10 +15,10 @@
             //年
             for (var i = 2010; i <= 2020; i++) {            
                 var theY = document.createElement('option');
-                theY.setAttribute('value', i);
+                theY.setAttribute('value', i);//設定屬性名稱,屬性值
                 //var optY = document.createTextNode(i);
                 //theY.appendChild(optY)
-                theY.innerHTML = i; //取代"兩個標籤"內的文字內容
+                theY.innerHTML = i; //取代"兩個標籤"內的文字內容,將節點取代為i
                 document.getElementById('idY').appendChild(theY);//使用appendChild將元素名稱依附在這個元素名稱後面
             }
        
